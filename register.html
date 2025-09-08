@@ -12,20 +12,31 @@
         <h1 class="text-2xl text-center mb-6">Minecraft Portal</h1>
         <div id="mc-register-form">
             <h2 class="text-lg text-center mb-4">Register</h2>
-            <form action="/submit-register" method="POST">
+            <form action="#" method="POST">
                 <div class="mb-4">
                     <input type="text" id="mc-register-username" name="username" placeholder="Username" class="mc-input w-full p-2 rounded" required>
                 </div>
-                <div class="mb-4">
-                    <input type="email" id="mc-register-email" name="email" placeholder="Email" class="mc-input w-full p-2 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <input type="password" id="mc-register-password" name="password" placeholder="Password" class="mc-input w-full p-2 rounded" required>
-                </div>
                 <button type="submit" class="mc-button w-full p-2 rounded mb-4">Register</button>
             </form>
-            <p class="text-center text-sm">Already have an account? <a href="index.html" class="mc-link">Login</a></p>
+            <p class="text-center text-sm"><a href="main.html" class="mc-link">Back to Home</a></p>
         </div>
     </div>
+    <script>
+    (function() {
+        const form = document.querySelector('#mc-register-form form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const usernameInput = document.getElementById('mc-register-username');
+                const username = usernameInput ? usernameInput.value.trim() : '';
+                if (!username) {
+                    alert('Please enter a username');
+                    return;
+                }
+                window.location.href = 'main.html';
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
