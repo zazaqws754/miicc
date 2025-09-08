@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Portal - Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-black text-green-400">
+    <!-- Navigation -->
+    <nav class="mc-nav p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl">Minecraft Portal</h1>
+            <div class="space-x-4">
+                <a href="main.html" class="mc-nav-link">Home</a>
+                <a href="mods.html" class="mc-nav-link">Mods</a>
+                <a href="download.html" class="mc-nav-link active">Download</a>
+                <a href="index.html" class="mc-nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="mc-content-container p-8 rounded-lg mb-8">
+            <h1 class="text-3xl text-center mb-6">Download Minecraft</h1>
+            <p class="text-center text-green-300 mb-8">Choose your platform and start your adventure!</p>
+            
+            <!-- Official Minecraft Editions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="mc-download-card p-6 rounded-lg">
+                    <h2 class="text-2xl mb-4 text-center">Java Edition</h2>
+                    <div class="text-center mb-4">
+                        <div class="mc-price-tag inline-block px-4 py-2 rounded mb-4">
+                            <span class="text-lg">$26.95</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-sm text-green-300 mb-6">
+                        <p>✅ PC, Mac, Linux</p>
+                        <p>✅ Unlimited mods</p>
+                        <p>✅ Custom servers</p>
+                        <p>✅ Resource packs</p>
+                        <p>✅ Cross-platform play</p>
+                        <p>✅ Snapshots & betas</p>
+                    </div>
+                    <button class="mc-button w-full p-3 rounded">
+                        Buy Java Edition
+                    </button>
+                </div>
+
+                <div class="mc-download-card p-6 rounded-lg">
+                    <h2 class="text-2xl mb-4 text-center">Bedrock Edition</h2>
+                    <div class="text-center mb-4">
+                        <div class="mc-price-tag inline-block px-4 py-2 rounded mb-4">
+                            <span class="text-lg">$29.99</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-sm text-green-300 mb-6">
+                        <p>✅ Windows 10/11</p>
+                        <p>✅ Xbox, PlayStation</p>
+                        <p>✅ Mobile devices</p>
+                        <p>✅ Nintendo Switch</p>
+                        <p>✅ Cross-platform play</p>
+                        <p>✅ Marketplace content</p>
+                    </div>
+                    <button class="mc-button w-full p-3 rounded">
+                        Buy Bedrock Edition
+                    </button>
+                </div>
+            </div>
+
+            <!-- Platform Specific Downloads -->
+            <div class="mc-platform-section p-6 rounded-lg mb-8">
+                <h2 class="text-2xl mb-6 text-center">Platform Downloads</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="mc-platform-card p-4 rounded text-center">
+                        <h3 class="text-lg mb-3">🖥️ PC</h3>
+                        <p class="text-sm text-green-300 mb-4">Windows 7 or later</p>
+                        <button class="mc-button-small px-4 py-2 rounded text-sm">Download</button>
+                    </div>
+                    <div class="mc-platform-card p-4 rounded text-center">
+                        <h3 class="text-lg mb-3">🍎 Mac</h3>
+                        <p class="text-sm text-green-300 mb-4">macOS 10.14.5 or later</p>
+                        <button class="mc-button-small px-4 py-2 rounded text-sm">Download</button>
+                    </div>
+                    <div class="mc-platform-card p-4 rounded text-center">
+                        <h3 class="text-lg mb-3">🐧 Linux</h3>
+                        <p class="text-sm text-green-300 mb-4">Any modern distribution</p>
+                        <button class="mc-button-small px-4 py-2 rounded text-sm">Download</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Downloads -->
+            <div class="mc-mobile-section p-6 rounded-lg mb-8">
+                <h2 class="text-2xl mb-6 text-center">Mobile & Console</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="mc-mobile-card p-4 rounded text-center">
+                        <h4 class="text-md mb-2">📱 iOS</h4>
+                        <button class="mc-button-small px-3 py-2 rounded text-xs">App Store</button>
+                    </div>
+                    <div class="mc-mobile-card p-4 rounded text-center">
+                        <h4 class="text-md mb-2">🤖 Android</h4>
+                        <button class="mc-button-small px-3 py-2 rounded text-xs">Google Play</button>
+                    </div>
+                    <div class="mc-mobile-card p-4 rounded text-center">
+                        <h4 class="text-md mb-2">🎮 Xbox</h4>
+                        <button class="mc-button-small px-3 py-2 rounded text-xs">Xbox Store</button>
+                    </div>
+                    <div class="mc-mobile-card p-4 rounded text-center">
+                        <h4 class="text-md mb-2">🕹️ PlayStation</h4>
+                        <button class="mc-button-small px-3 py-2 rounded text-xs">PS Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Requirements -->
+            <div class="mc-requirements-section p-6 rounded-lg">
+                <h2 class="text-2xl mb-6 text-center">System Requirements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="mc-req-card p-4 rounded">
+                        <h3 class="text-lg mb-3">Minimum Requirements</h3>
+                        <div class="text-sm text-green-300 space-y-1">
+                            <p>• CPU: Intel Core i3-3210 / AMD A8-7600</p>
+                            <p>• RAM: 4 GB</p>
+                            <p>• GPU: Intel HD Graphics 4000</p>
+                            <p>• Storage: 4 GB</p>
+                            <p>• Network: Internet connection</p>
+                        </div>
+                    </div>
+                    <div class="mc-req-card p-4 rounded">
+                        <h3 class="text-lg mb-3">Recommended Requirements</h3>
+                        <div class="text-sm text-green-300 space-y-1">
+                            <p>• CPU: Intel Core i5-4690 / AMD A10-7800</p>
+                            <p>• RAM: 8 GB</p>
+                            <p>• GPU: GeForce 700 Series / AMD Radeon Rx 200</p>
+                            <p>• Storage: 8 GB SSD</p>
+                            <p>• Network: Broadband connection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 p-6 text-center text-green-300">
+        <p class="text-sm">© 2024 Minecraft Portal. Not affiliated with Mojang Studios.</p>
+    </footer>
+</body>
+</html>

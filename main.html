@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Portal - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-black text-green-400">
+    <!-- Navigation -->
+    <nav class="mc-nav p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl">Minecraft Portal</h1>
+            <div class="space-x-4">
+                <a href="main.html" class="mc-nav-link active">Home</a>
+                <a href="mods.html" class="mc-nav-link">Mods</a>
+                <a href="#" id="navGacha" class="mc-nav-link">Random Character</a>
+                <a href="download.html" class="mc-nav-link">Download</a>
+                <a href="index.html" class="mc-nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal: Random Character (Gacha) -->
+    <div id="gachaModal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div id="gachaBackdrop" class="absolute inset-0 bg-black/70"></div>
+        <!-- Sheet/Modal -->
+        <div class="absolute inset-x-0 bottom-0 md:inset-0 md:flex md:items-center md:justify-center">
+            <div class="mc-hero-container rounded-t-2xl md:rounded-xl p-6 md:w-full md:max-w-xl md:mx-auto bg-opacity-100 translate-y-0">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl">Random Character (Minecraft)</h3>
+                    <button id="closeGacha" class="mc-nav-link px-3 py-1 text-sm">Close</button>
+                </div>
+                <p class="text-sm text-green-300 mb-4">Tap the button to roll a real Minecraft character and see its chance.</p>
+                <div class="flex justify-center mb-4">
+                    <button id="rollBtn" class="mc-nav-link px-5 py-3 text-base">Roll</button>
+                </div>
+                <div id="rollResult" class="text-center text-green-300 mb-4 text-base"></div>
+                <div class="mc-content-container p-4 rounded">
+                    <h4 class="text-lg mb-2">Rates</h4>
+                    <ul id="ratesList" class="list-disc list-inside text-green-300 text-sm"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="mc-hero-container text-center p-8 rounded-lg mb-8">
+            <h1 class="text-4xl mb-4">Welcome to Minecraft Portal</h1>
+            <p class="text-lg mb-6 text-green-300">Your ultimate destination for Minecraft adventures</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="mc-card p-6 rounded-lg">
+                    <h3 class="text-xl mb-3">🏠 Home</h3>
+                    <p class="text-sm text-green-300">Welcome to our Minecraft community! Explore everything we have to offer.</p>
+                </div>
+                <div class="mc-card p-6 rounded-lg">
+                    <h3 class="text-xl mb-3">🔧 Mods</h3>
+                    <p class="text-sm text-green-300">Discover amazing mods to enhance your Minecraft experience.</p>
+                </div>
+                <div class="mc-card p-6 rounded-lg">
+                    <h3 class="text-xl mb-3">⬇️ Download</h3>
+                    <p class="text-sm text-green-300">Get Minecraft and start your adventure today!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Content -->
+        <div class="mc-content-container p-8 rounded-lg">
+            <h2 class="text-2xl mb-6 text-center">Featured Content</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mc-feature-card p-4 rounded">
+                    <h3 class="text-lg mb-3">🌟 Latest Updates</h3>
+                    <p class="text-sm text-green-300">Stay up to date with the latest Minecraft news and updates from Mojang Studios.</p>
+                </div>
+                <div class="mc-feature-card p-4 rounded">
+                    <h3 class="text-lg mb-3">🎮 Server Status</h3>
+                    <p class="text-sm text-green-300">Check our server status and join the community for multiplayer fun!</p>
+                </div>
+                <div class="mc-feature-card p-4 rounded">
+                    <h3 class="text-lg mb-3">📚 Tutorials</h3>
+                    <p class="text-sm text-green-300">Learn new building techniques and redstone contraptions.</p>
+                </div>
+                <div class="mc-feature-card p-4 rounded">
+                    <h3 class="text-lg mb-3">👥 Community</h3>
+                    <p class="text-sm text-green-300">Join our Discord and connect with other Minecraft enthusiasts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 p-6 text-center text-green-300">
+        <p class="text-sm">© 2024 Minecraft Portal. Not affiliated with Mojang Studios.</p>
+    </footer>
+    <script>
+    (function() {
+        const characters = [
+            { name: 'Steve', rate: 22 },
+            { name: 'Alex', rate: 22 },
+            { name: 'Villager', rate: 18 },
+            { name: 'Zombie', rate: 12 },
+            { name: 'Skeleton', rate: 9 },
+            { name: 'Spider', rate: 7 },
+            { name: 'Creeper', rate: 5 },
+            { name: 'Witch', rate: 3 },
+            { name: 'Enderman', rate: 1 },
+            { name: 'Iron Golem', rate: 0.7 },
+            { name: 'Ender Dragon', rate: 0.3 }
+        ];
+        // Elements
+        const navGacha = document.getElementById('navGacha');
+        const gachaModal = document.getElementById('gachaModal');
+        const gachaBackdrop = document.getElementById('gachaBackdrop');
+        const closeGacha = document.getElementById('closeGacha');
+        const ratesListEl = document.getElementById('ratesList');
+        const rollBtn = document.getElementById('rollBtn');
+        const rollResult = document.getElementById('rollResult');
+
+        function renderRates() {
+            ratesListEl.innerHTML = '';
+            characters.forEach((c) => {
+                const li = document.createElement('li');
+                const rateStr = Number.isInteger(c.rate) ? c.rate.toString() : c.rate.toFixed(1);
+                li.textContent = `${c.name} — ${rateStr}%`;
+                ratesListEl.appendChild(li);
+            });
+        }
+
+        function openModal() {
+            gachaModal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            gachaModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function weightedRandomPick(items) {
+            const total = items.reduce((sum, it) => sum + it.rate, 0);
+            let r = Math.random() * total;
+            for (let i = 0; i < items.length; i++) {
+                if (r < items[i].rate) return items[i];
+                r -= items[i].rate;
+            }
+            return items[items.length - 1];
+        }
+
+        // Events
+        if (navGacha) navGacha.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+        if (closeGacha) closeGacha.addEventListener('click', closeModal);
+        if (gachaBackdrop) gachaBackdrop.addEventListener('click', closeModal);
+        if (rollBtn) {
+            rollBtn.addEventListener('click', () => {
+                const picked = weightedRandomPick(characters);
+                const rateStr = Number.isInteger(picked.rate) ? picked.rate.toString() : picked.rate.toFixed(1);
+                rollResult.textContent = `You got: ${picked.name} (Chance ${rateStr}%)`;
+            });
+        }
+
+        renderRates();
+    })();
+    </script>
+</body>
+</html>
